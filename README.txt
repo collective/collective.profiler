@@ -134,24 +134,3 @@ profile
 
  * `entries` limits the output to the first N entries.
   
- 
-
-Changelog
-=========
-
-0.3 (2011-05-12)
-----------------
-
-- Nothing changed yet.
-
-
-0.2 (2011-05-12)
-----------------
-
-- Add some information in setup.py
-
-
-0.1 (2011-05-12)
-----------------
-
-- Initial release
