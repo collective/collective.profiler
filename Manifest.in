@@ -1,0 +1,4 @@
+global-include *.txt
+global-include *.ini
+global-include *.zcml
+recursive-include collective *
