@@ -4,7 +4,7 @@ Changelog
 0.2 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Add some information in setup.py
 
 
 0.1 (2011-05-12)
