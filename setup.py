@@ -12,6 +12,11 @@ setup(name='collective.profiler',
       # http://pypi.python.org/pypi?%3Aaction=list_classifiers
       classifiers=[
         "Programming Language :: Python",
+        "Framework :: Zope2",
+        "Framework :: Zope3",
+        "Framework :: Plone",
+        "Intended Audience :: Developers",
+        "Topic :: Utilities"
         ],
       keywords='',
       author='yboussard',
