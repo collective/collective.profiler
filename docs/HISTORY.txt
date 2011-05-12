@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.2 (unreleased)
+0.2 (2011-05-12)
 ----------------
 
 - Add some information in setup.py
