@@ -2,7 +2,7 @@ Introduction
 ============
 
 collective.profiler is a tool that helps developers to analyze code performance.
-It's patch via an zcml declaration your code in order to give you some performance value.
+It patch code via an zcml declaration.
 
 There is two directive :
 
