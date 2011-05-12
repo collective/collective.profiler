@@ -3,10 +3,11 @@ Introduction
 
 collective.profiler is a tool that helps developers to analyze code performance.
 It patch code via an zcml declaration.
+It use the very good **profilehooks** package in internal. collective.profiler is just an interface to this tool
 
-There is two directive :
+There is two directives :
 
- * timecall -> give you the number of seconds by calls
+* **timecall** -> give you the number of seconds by calls
 
 Example ::
 
@@ -28,7 +29,7 @@ When you start in fg your zopeinstance you can see after the start ::
  listFilteredActionsFor (.../eggs/Plone-3.3.5-py2.4.egg/Products/CMFPlone/ActionsTool.py:94):
     1 calls, 0.238 seconds (0.238 seconds per call)
 
- * profile -> print the results of profiling 
+* **profile** -> print the results of profiling 
 
 Exemple :: 
 
@@ -131,6 +132,26 @@ profile
         'stdname'    -- standard name
         'time'       -- internal time
 
-  * `entries` limits the output to the first N entries.
+ * `entries` limits the output to the first N entries.
   
  
+
+Changelog
+=========
+
+0.3 (2011-05-12)
+----------------
+
+- Nothing changed yet.
+
+
+0.2 (2011-05-12)
+----------------
+
+- Add some information in setup.py
+
+
+0.1 (2011-05-12)
+----------------
+
+- Initial release
