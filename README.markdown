@@ -5,7 +5,7 @@ Introduction
 performance.  
 
 To use it, declare the methods that you want to profile using ZCML
-declarations. These methods will be patched to enable profiling. 
+directives. These methods will be patched to enable profiling. 
 
 It uses the excellent **profilehooks** package. ``collective.profiler`` is
 just an interface to this tool.
