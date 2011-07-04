@@ -1,15 +1,20 @@
 Introduction
 ============
 
-collective.profiler is a tool that helps developers to analyze code performance.
-It patch code via an zcml declaration.
-It use the very good **profilehooks** package in internal. collective.profiler is just an interface to this tool
+``collective.profiler`` is a tool that helps developers to analyze code
+performance.  
 
-There is two directives :
+To use it, declare the methods that you want to profile using ZCML
+directives. These methods will be patched to enable profiling. 
 
-* **timecall** -> give you the number of seconds by calls
+It uses the excellent **profilehooks** package. ``collective.profiler`` is
+just an interface to this tool.
 
-Example ::
+There are two directives:
+
+* ``timecall`` -> gives you the number of seconds per call.
+
+Example::
 
  <configure
     xmlns="http://namespaces.zope.org/zope"
@@ -22,16 +27,18 @@ Example ::
           />
   </configure>
 
-give you some information about the call of listFilteredActionsFor method 
+This declaration will give you some information about the
+``listFilteredActionsFor`` method.
 
-When you start in fg your zopeinstance you can see after the start ::
+If you start your Zope instance in the foreground, after startup you will
+see::
 
  listFilteredActionsFor (.../eggs/Plone-3.3.5-py2.4.egg/Products/CMFPlone/ActionsTool.py:94):
     1 calls, 0.238 seconds (0.238 seconds per call)
 
-* **profile** -> print the results of profiling 
+* ``profile`` -> print the results of profiling.
 
-Exemple :: 
+Example:: 
 
   <configure
     xmlns="http://namespaces.zope.org/zope"
@@ -44,9 +51,10 @@ Exemple ::
         />
   </configure>
 
-When you start in fg your zopeinstance you can see after the start ::
+If you start your Zope instance in the foreground, after startup you will
+see::
 
-  *** PROFILER RESULTS ***
+ *** PROFILER RESULTS ***
  listFilteredActionsFor (/Users/yboussard/.virtualenvs/dpldt/buildout/eggs/Plone-3.3.5-py2.4.egg/Products/CMFPlone/ActionsTool.py:94)
  function called 1 times
 
@@ -103,23 +111,32 @@ Options
 timecall
 --------
 
- * immediate : If you want just a summary at program termination, use False
+``immediate``
+    If you just want a summary at program termination, use ``False``.
 
 profile
 -------
  
- * skip :   If `skip` is > 0, first `skip` calls to `fn` will not be profiled.
+``skip``
+    If ``skip`` is > 0, the first ``skip`` calls to ``fn`` will not be
+    profiled. (This is useful to let any caches get warmed up.)
  
- * filename : If `filename` is specified, the profile stats will be stored in the named file. You can analyse it with profiler tool or pstats.Stats(filename).
- 
- * If `immediate` is False, profiling results will be printed to
-    sys.stdout on program termination.
+``filename``
+    If ``filename`` is specified, the profile stats will be stored in the
+    named file. You can analyse it with the profiler tool or with
+    ``pstats.Stats(filename)``.
 
- * If `dirs` is False only the name of the file will be printed.
+``immediate``
+    If ``immediate`` is ``False``, profiling results will be printed to
+    ``sys.stdout`` on program termination.
+
+``dirs``
+    If ``dirs`` is ``False`` only the name of the file will be printed.
     Otherwise the full path is used.
-   
- * `sort` can be a list of sort keys (defaulting to ['cumulative',
-    'time', 'calls']).  The following ones are recognized::
+
+``sort``
+    ``sort`` can be a list of sort keys (defaulting to ``['cumulative',
+    'time', 'calls']``).  The following keys are recognized::
 
         'calls'      -- call count
         'cumulative' -- cumulative time
@@ -132,5 +149,6 @@ profile
         'stdname'    -- standard name
         'time'       -- internal time
 
- * `entries` limits the output to the first N entries.
-  
+``entries``
+    ``entries`` limits the output to the first N entries.
+
